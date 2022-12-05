@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sinric_app/shared/applocal.dart';
 
 class GoogleButton extends StatelessWidget {
   const GoogleButton({Key? key}) : super(key: key);
@@ -21,9 +22,9 @@ class GoogleButton extends StatelessWidget {
                   width: 40,
                 )),
             const SizedBox(width: 8),
-            const Text(
-              'Sign in with google',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+            Text(
+              getLang(context, "Sign_in_with_google"),
+              style: const TextStyle(color: Colors.white, fontSize: 18),
             ),
           ],
         ),

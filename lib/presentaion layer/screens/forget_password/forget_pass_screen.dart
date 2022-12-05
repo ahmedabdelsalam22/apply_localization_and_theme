@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/app_router/app_router.dart';
-import '../../../core/components.dart';
+import '../../../shared/app_router/app_router.dart';
+import '../../../shared/applocal.dart';
+import '../../../shared/components.dart';
 import '../../widgets/back_widget.dart';
 import '../../widgets/text_widget.dart';
 
@@ -36,7 +37,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 children: [
                   const SizedBox(height: 10),
                   TextWidget(
-                    text: 'Forget Your Password?',
+                    text: getLang(context, "Forget_your_password"),
                     color: Colors.black,
                     textSize: 25,
                   ),
@@ -44,8 +45,8 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
 
                   /// TODO : handel this text ..
                   TextWidget(
-                    text:
-                        "               Don't worry enter your registered \n email to recieve password reset link in your inbox",
+                    text: getLang(
+                        context, "Don't_worry_enter_your_registered_email"),
                     color: Colors.grey,
                     textSize: 16,
                   ),
@@ -62,39 +63,39 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                     keyboardType: TextInputType.emailAddress,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return 'Enter a valid email';
+                        return getLang(context, "Enter_a_valid_email");
                       }
                       return null;
                     },
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       focusColor: Colors.deepOrange,
-                      labelText: 'Email',
-                      labelStyle: TextStyle(color: Colors.deepOrange),
-                      prefixIcon: Icon(
+                      labelText: getLang(context, "email"),
+                      labelStyle: const TextStyle(color: Colors.deepOrange),
+                      prefixIcon: const Icon(
                         Icons.email_rounded,
                         color: Colors.red,
                       ),
-                      border: OutlineInputBorder(
+                      border: const OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.deepOrange),
                       ),
-                      focusedBorder: OutlineInputBorder(
+                      focusedBorder: const OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.deepOrange),
                       ),
-                      enabledBorder: OutlineInputBorder(
+                      enabledBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.deepOrange)),
                     ),
                   ),
                   Row(
                     children: [
-                      const Text('I remembered password?'),
+                      Text(getLang(context, "I_remembered_password")),
                       TextButton(
                         onPressed: () {
                           Navigator.pushNamed(
                               context, AppRoutes.loginScreenRoute);
                         },
-                        child: const Text(
-                          'Login',
-                          style: TextStyle(
+                        child: Text(
+                          getLang(context, "login"),
+                          style: const TextStyle(
                             color: Colors.deepOrange,
                           ),
                         ),
@@ -103,12 +104,13 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   ),
                   const SizedBox(height: 10),
                   defaultButton(
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          /// TODO:
-                        }
-                      },
-                      text: 'Send')
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        /// TODO:
+                      }
+                    },
+                    text: getLang(context, "send"),
+                  )
                 ],
               ),
             ),

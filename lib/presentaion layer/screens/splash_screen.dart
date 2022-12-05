@@ -3,8 +3,9 @@ import 'dart:async';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sinric_app/shared/applocal.dart';
 
-import '../../core/app_router/app_router.dart';
+import '../../shared/app_router/app_router.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -50,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             SizedBox(height: 20.h),
             TextLiquidFill(
-              text: 'Castle Black Tech',
+              text: getLang(context, "Castle_Black_Tech"),
               waveColor: Colors.deepOrange,
               boxBackgroundColor: Colors.white,
               loadDuration: const Duration(seconds: 3),
