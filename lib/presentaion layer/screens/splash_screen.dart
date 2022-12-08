@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sinric_app/shared/applocal.dart';
 
+import '../../notification_services/notification_service.dart';
 import '../../shared/app_router/app_router.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -26,6 +27,12 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    NotifyHelper notifyHelper = NotifyHelper();
+    notifyHelper.initializeNotification();
+    notifyHelper.displayNotification(
+      title: "Welcome in castle black tech",
+      body: 'I hope you like our app',
+    );
     _startDelay();
   }
 
