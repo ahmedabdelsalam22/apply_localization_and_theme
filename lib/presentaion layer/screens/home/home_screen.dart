@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../shared/color_manager.dart';
+import '../../widgets/my_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -22,14 +23,14 @@ class HomeScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          leading: IconButton(
+          /* leading: IconButton(
             onPressed: () {},
             icon: const Icon(
               Icons.read_more_sharp,
               color: Colors.deepOrange,
               size: 30,
             ),
-          ),
+          ),*/
           actions: [
             IconButton(
               onPressed: () {},
@@ -91,6 +92,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
+        drawer: const MyDrawer(),
       ),
     );
   }
