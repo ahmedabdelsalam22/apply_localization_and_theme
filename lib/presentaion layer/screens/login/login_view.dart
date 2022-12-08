@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => LoginCubit(),
+      create: (context) => LoginCubit()..setNotification(),
       child: BlocConsumer<LoginCubit, LoginStates>(
         listener: (context, state) {},
         builder: (context, state) {

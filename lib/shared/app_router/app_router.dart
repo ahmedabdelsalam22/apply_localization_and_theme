@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sinric_app/presentaion%20layer/screens/forget_password/forget_pass_screen.dart';
+import 'package:sinric_app/presentaion%20layer/screens/home/home_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/login/login_view.dart';
 import 'package:sinric_app/presentaion%20layer/screens/register/register_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/splash_screen.dart';
@@ -9,6 +10,7 @@ class AppRoutes {
   static const String splashScreenRoute = 'splashScreen';
   static const String registerScreenRoute = 'registerScreen';
   static const String forgetPassScreenRoute = 'forgetPassScreen';
+  static const String homeScreenRoute = 'homeScreen';
 }
 
 class AppRouter {
@@ -25,6 +27,9 @@ class AppRouter {
 
       case AppRoutes.forgetPassScreenRoute:
         return MaterialPageRoute(builder: (_) => const ForgetPasswordScreen());
+
+      case AppRoutes.homeScreenRoute:
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
 
       default:
         return MaterialPageRoute(builder: (_) => const SplashScreen());

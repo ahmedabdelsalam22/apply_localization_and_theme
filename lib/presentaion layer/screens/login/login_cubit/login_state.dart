@@ -13,3 +13,5 @@ class LoginErrorState extends LoginStates {
 
   LoginErrorState(this.error);
 }
+
+class LoginNotificationState extends LoginStates {}

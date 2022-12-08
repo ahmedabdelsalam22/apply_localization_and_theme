@@ -7,10 +7,13 @@ import 'package:sinric_app/shared/app_router/app_router.dart';
 import 'package:sinric_app/shared/applocal.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
     statusBarIconBrightness: Brightness.dark,
   ));
+
   runApp(MyApp());
 }
 
@@ -35,7 +38,7 @@ class MyApp extends StatelessWidget {
               primarySwatch: Colors.deepOrange),
           home: const SplashScreen(),
           onGenerateRoute: AppRouter.generateRoute,
-          initialRoute: AppRoutes.splashScreenRoute,
+          initialRoute: AppRoutes.homeScreenRoute,
           localizationsDelegates: const [
             AppLocale.delegate,
             GlobalMaterialLocalizations.delegate,
