@@ -29,5 +29,9 @@
   "logOff": "تسجيل خروج",
   "schedules": "الجداول",
   "account": "الحساب",
-  "activityLog": "سجل النشاط"
+  "activityLog": "سجل النشاط",
+  "config":"الاعدادات",
+  "technicalSupport": "الدعم الفني",
+  "contact": "تواصل معنا"
+
 }
