@@ -21,5 +21,13 @@
   "please_enter_name": "please enter a valid name",
   "Enter_a_valid_number": "Enter a valid number",
   "Sign_in_with_google": "Sign in with google",
-  "i_have_no_account": "i have no account"
+  "i_have_no_account": "i have no account",
+  "home": "Home",
+  "devices": "DEVICES",
+  "rooms": "ROOMS",
+  "scenes": "SCENES",
+  "logOff": "Log off",
+  "schedules": "Schedules",
+  "account": "Account",
+  "activityLog": "Activity Log"
 }

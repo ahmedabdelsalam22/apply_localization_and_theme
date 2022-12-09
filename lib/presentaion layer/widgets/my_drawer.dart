@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sinric_app/notification_services/localization/applocal.dart';
+
+import '../../shared/color_manager.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -48,12 +51,12 @@ class MyDrawer extends StatelessWidget {
     return ListTile(
       leading: Icon(
         leadingIcon,
-        color: color ?? Colors.deepOrange,
+        color: color ?? ColorManager.primary,
       ),
       title: Text(title),
-      trailing: trailing ??= const Icon(
+      trailing: trailing ??= Icon(
         Icons.arrow_right,
-        color: Colors.deepOrange,
+        color: ColorManager.primary,
       ),
       onTap: onTap,
     );
@@ -83,37 +86,37 @@ class MyDrawer extends StatelessWidget {
           ),
           buildDrawerListItem(
             leadingIcon: Icons.meeting_room_rounded,
-            title: 'Rooms',
+            title: getLang(context, 'rooms'),
             onTap: () {},
           ),
           buildDrawerListItemsDivider(),
           buildDrawerListItem(
             leadingIcon: Icons.schedule,
-            title: 'Schedules',
+            title: getLang(context, 'schedules'),
             onTap: () {},
           ),
           buildDrawerListItemsDivider(),
           buildDrawerListItem(
             leadingIcon: Icons.video_settings_sharp,
-            title: 'Scenes',
+            title: getLang(context, 'scenes'),
             onTap: () {},
           ),
           buildDrawerListItemsDivider(),
           buildDrawerListItem(
             leadingIcon: Icons.person,
-            title: 'Account',
+            title: getLang(context, 'account'),
             onTap: () {},
           ),
           buildDrawerListItemsDivider(),
           buildDrawerListItem(
             leadingIcon: Icons.history,
-            title: 'Activity Log',
+            title: getLang(context, 'activityLog'),
             onTap: () {},
           ),
           buildDrawerListItemsDivider(),
           buildDrawerListItem(
             leadingIcon: Icons.logout,
-            title: 'Log off',
+            title: getLang(context, 'logOff'),
             onTap: () {},
           ),
           buildDrawerListItemsDivider(),

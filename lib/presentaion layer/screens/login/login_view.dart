@@ -4,9 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sinric_app/presentaion%20layer/screens/login/login_cubit/login_cubit.dart';
 import 'package:sinric_app/presentaion%20layer/screens/login/login_cubit/login_state.dart';
-import 'package:sinric_app/shared/applocal.dart';
 
-import '../../../shared/app_router/app_router.dart';
+import '../../../notification_services/localization/applocal.dart';
+import '../../../shared/app_router.dart';
+import '../../../shared/color_manager.dart';
 import '../../../shared/components.dart';
 import '../../widgets/google_button.dart';
 
@@ -88,7 +89,7 @@ class LoginScreen extends StatelessWidget {
                               cubit.obscureText
                                   ? Icons.visibility
                                   : Icons.visibility_off_sharp,
-                              color: Colors.deepOrange,
+                              color: ColorManager.primary,
                             ),
                           ),
                         ),
@@ -108,8 +109,9 @@ class LoginScreen extends StatelessWidget {
                               },
                               child: Text(
                                 getLang(context, "reset"),
-                                style:
-                                    const TextStyle(color: Colors.deepOrange),
+                                style: TextStyle(
+                                  color: ColorManager.primary,
+                                ),
                               ),
                             ),
                           ],

@@ -4,9 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sinric_app/presentaion%20layer/screens/register/register_cubit/register_cubit.dart';
 import 'package:sinric_app/presentaion%20layer/screens/register/register_cubit/register_state.dart';
-import 'package:sinric_app/shared/applocal.dart';
 
-import '../../../shared/app_router/app_router.dart';
+import '../../../notification_services/localization/applocal.dart';
+import '../../../shared/app_router.dart';
+import '../../../shared/color_manager.dart';
 import '../../../shared/components.dart';
 import '../../widgets/back_widget.dart';
 import '../../widgets/google_button.dart';
@@ -116,7 +117,7 @@ class RegisterScreen extends StatelessWidget {
                               cubit.obscureText
                                   ? Icons.visibility
                                   : Icons.visibility_off_sharp,
-                              color: Colors.deepOrange,
+                              color: ColorManager.primary,
                             ),
                           ),
                         ),

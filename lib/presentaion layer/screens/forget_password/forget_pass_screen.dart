@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../shared/app_router/app_router.dart';
-import '../../../shared/applocal.dart';
+import '../../../notification_services/localization/applocal.dart';
+import '../../../shared/app_router.dart';
+import '../../../shared/color_manager.dart';
 import '../../../shared/components.dart';
 import '../../widgets/back_widget.dart';
 import '../../widgets/text_widget.dart';
@@ -58,7 +59,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   ),
                   const SizedBox(height: 30),
                   TextFormField(
-                    cursorColor: Colors.deepOrange,
+                    cursorColor: ColorManager.primary,
                     controller: _emailController,
                     keyboardType: TextInputType.emailAddress,
                     validator: (value) {
@@ -68,21 +69,29 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                       return null;
                     },
                     decoration: InputDecoration(
-                      focusColor: Colors.deepOrange,
+                      focusColor: ColorManager.primary,
                       labelText: getLang(context, "email"),
-                      labelStyle: const TextStyle(color: Colors.deepOrange),
-                      prefixIcon: const Icon(
+                      labelStyle: TextStyle(
+                        color: ColorManager.primary,
+                      ),
+                      prefixIcon: Icon(
                         Icons.email_rounded,
-                        color: Colors.red,
+                        color: ColorManager.primary,
                       ),
-                      border: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.deepOrange),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: ColorManager.primary,
+                        ),
                       ),
-                      focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.deepOrange),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: ColorManager.primary,
+                        ),
                       ),
-                      enabledBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.deepOrange)),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                        color: ColorManager.primary,
+                      )),
                     ),
                   ),
                   Row(
@@ -95,8 +104,8 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                         },
                         child: Text(
                           getLang(context, "login"),
-                          style: const TextStyle(
-                            color: Colors.deepOrange,
+                          style: TextStyle(
+                            color: ColorManager.primary,
                           ),
                         ),
                       )

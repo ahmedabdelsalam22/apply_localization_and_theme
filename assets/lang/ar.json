@@ -21,5 +21,13 @@
   "please_enter_name": "من فضلك ادخل الاسم",
   "Enter_a_valid_number": "من فضلك ادخل رقم الهاتف",
   "Sign_in_with_google": "تسجيل الدخول بحساب جوجل",
-  "i_have_no_account": "لا املك حساب"
+  "i_have_no_account": "لا املك حساب",
+  "home": "الصفحه الرئيسيه",
+  "devices": "الاجهزه",
+  "rooms": "الغرف",
+  "scenes": "المشاهد",
+  "logOff": "تسجيل خروج",
+  "schedules": "الجداول",
+  "account": "الحساب",
+  "activityLog": "سجل النشاط"
 }
