@@ -29,5 +29,9 @@
   "logOff": "Log off",
   "schedules": "Schedules",
   "account": "Account",
-  "activityLog": "Activity Log"
+  "activityLog": "Activity Log",
+  "config":"Configuration",
+  "technicalSupport": "Technical Support",
+  "contact": "Contact"
+
 }

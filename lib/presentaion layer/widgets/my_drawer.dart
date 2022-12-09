@@ -17,27 +17,32 @@ class MyDrawer extends StatelessWidget {
           ),
           child: const Image(
             fit: BoxFit.cover,
-            height: 100,
-            width: 100,
+            height: 70,
+            width: 70,
             image: AssetImage(
               'assets/images/splash.png',
             ),
           ),
         ),
         const SizedBox(
-          height: 40,
+          height: 15,
         ),
         const Text(
           'userName',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
         ),
         const SizedBox(
           height: 5,
         ),
         const Text(
           'user email',
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-        )
+          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+        ),
+        const Spacer(),
+        const Text(
+          'First release version',
+          style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+        ),
       ],
     );
   }
@@ -78,7 +83,7 @@ class MyDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           SizedBox(
-            height: 280,
+            height: 240,
             child: DrawerHeader(
               decoration: BoxDecoration(color: Colors.blue[100]),
               child: buildDrawerHeader(context),
@@ -111,6 +116,24 @@ class MyDrawer extends StatelessWidget {
           buildDrawerListItem(
             leadingIcon: Icons.history,
             title: getLang(context, 'activityLog'),
+            onTap: () {},
+          ),
+          buildDrawerListItemsDivider(),
+          buildDrawerListItem(
+            leadingIcon: Icons.confirmation_number_outlined,
+            title: getLang(context, 'config'),
+            onTap: () {},
+          ),
+          buildDrawerListItemsDivider(),
+          buildDrawerListItem(
+            leadingIcon: Icons.help_outline,
+            title: getLang(context, 'technicalSupport'),
+            onTap: () {},
+          ),
+          buildDrawerListItemsDivider(),
+          buildDrawerListItem(
+            leadingIcon: Icons.call,
+            title: getLang(context, 'contact'),
             onTap: () {},
           ),
           buildDrawerListItemsDivider(),
