@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import 'color_manager.dart';
+
 Widget defaultTextButton({required Function onPressed, required String text}) {
   return TextButton(
       onPressed: () {
@@ -57,7 +59,7 @@ Widget buildTextFormField({
       labelText: label,
       prefixIcon: Icon(
         prefixIcon,
-        color: Colors.deepOrange,
+        color: ColorManager.primary,
       ),
       border: const OutlineInputBorder(),
       suffixIcon: suffix,

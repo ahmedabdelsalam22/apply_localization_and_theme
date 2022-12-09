@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sinric_app/shared/applocal.dart';
+
+import '../../notification_services/localization/applocal.dart';
+import '../../shared/color_manager.dart';
 
 class GoogleButton extends StatelessWidget {
   const GoogleButton({Key? key}) : super(key: key);
@@ -7,7 +9,7 @@ class GoogleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.deepOrange,
+      color: ColorManager.primary,
       child: InkWell(
         onTap: () {
           ///

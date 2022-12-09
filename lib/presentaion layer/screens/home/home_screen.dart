@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../notification_services/localization/applocal.dart';
 import '../../../shared/color_manager.dart';
 import '../../widgets/my_drawer.dart';
 
@@ -11,58 +12,50 @@ class HomeScreen extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        backgroundColor: backGround,
+        backgroundColor: ColorManager.backGround,
         appBar: AppBar(
           elevation: 0.0,
-          backgroundColor: backGround,
+          backgroundColor: ColorManager.backGround,
           centerTitle: true,
-          title: const Text(
-            'Home',
+          title: Text(
+            getLang(context, 'home'),
             style: TextStyle(
-              color: Colors.deepOrange,
+              color: ColorManager.primary,
               fontWeight: FontWeight.bold,
             ),
           ),
-          /* leading: IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.read_more_sharp,
-              color: Colors.deepOrange,
-              size: 30,
-            ),
-          ),*/
           actions: [
             IconButton(
               onPressed: () {},
-              icon: const Icon(
+              icon: Icon(
                 Icons.add,
-                color: Colors.deepOrange,
+                color: ColorManager.primary,
                 size: 30,
               ),
             ),
             IconButton(
               onPressed: () {},
-              icon: const Icon(
+              icon: Icon(
                 Icons.refresh_sharp,
-                color: Colors.deepOrange,
+                color: ColorManager.primary,
                 size: 30,
               ),
             ),
           ],
-          bottom: const TabBar(
+          bottom: TabBar(
             indicatorWeight: 3.0,
-            indicatorColor: Colors.deepOrange,
-            labelColor: Colors.deepOrange,
-            labelStyle: TextStyle(fontWeight: FontWeight.bold),
+            indicatorColor: ColorManager.primary,
+            labelColor: ColorManager.primary,
+            labelStyle: const TextStyle(fontWeight: FontWeight.bold),
             tabs: [
               Tab(
-                text: 'DEVICES',
+                text: getLang(context, 'devices'),
               ),
               Tab(
-                text: 'ROOMS',
+                text: getLang(context, 'rooms'),
               ),
               Tab(
-                text: 'SCENES',
+                text: getLang(context, 'scenes'),
               ),
             ],
           ),
