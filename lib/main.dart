@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sinric_app/presentaion%20layer/screens/splash_screen.dart';
 import 'package:sinric_app/shared/app_router/app_router.dart';
 import 'package:sinric_app/shared/applocal.dart';
+import 'package:sinric_app/shared/themes.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,10 +33,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-              fontFamily: 'pro',
-              primaryColor: Colors.deepOrange,
-              primarySwatch: Colors.deepOrange),
+          theme: lightTheme,
           home: const SplashScreen(),
           onGenerateRoute: AppRouter.generateRoute,
           initialRoute: AppRoutes.homeScreenRoute,
