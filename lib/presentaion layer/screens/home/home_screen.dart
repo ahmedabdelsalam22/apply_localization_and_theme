@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:sinric_app/presentaion%20layer/widgets/text_widget.dart';
+import 'package:sinric_app/shared/color_manager.dart';
 
 import '../../../notification_services/localization/applocal.dart';
-import '../../../shared/color_manager.dart';
 import '../../widgets/my_drawer.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool _show = false;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +34,11 @@ class HomeScreen extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  _show = !_show;
+                });
+              },
               icon: Icon(
                 Icons.add,
                 color: ColorManager.primary,
@@ -86,6 +98,69 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
         drawer: const MyDrawer(),
+        bottomSheet: BottomSheet(
+          onClosing: () {},
+          builder: (context) => _showBottomSheet(),
+        ),
+      ),
+    );
+  }
+
+  Widget _showBottomSheet() {
+    if (_show) {
+      return BottomSheet(
+        onClosing: () {},
+        builder: (context) {
+          return Container(
+            height: MediaQuery.of(context).size.height * 0.3,
+            alignment: Alignment.center,
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 7),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  bottomSheetItem(
+                      title: 'Add Device',
+                      subtitle: 'Connect smart home devices to your account',
+                      onPressed: () {}),
+                  const Divider(),
+                  bottomSheetItem(
+                      title: 'Add Room',
+                      subtitle: 'Create new rooms and group devices together',
+                      onPressed: () {}),
+                  const Divider(),
+                  bottomSheetItem(
+                      title: 'Add Scene',
+                      subtitle:
+                          'Scene let your control multiple devices together',
+                      onPressed: () {})
+                ],
+              ),
+            ),
+          );
+        },
+      );
+    } else {
+      return const SizedBox();
+    }
+  }
+
+  Widget bottomSheetItem(
+      {required String title,
+      required String subtitle,
+      required VoidCallback? onPressed}) {
+    return SizedBox(
+      child: TextButton(
+        onPressed: onPressed,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextWidget(text: title, color: ColorManager.primary, textSize: 15),
+            TextWidget(
+                text: subtitle, color: ColorManager.primary, textSize: 15),
+          ],
+        ),
       ),
     );
   }
