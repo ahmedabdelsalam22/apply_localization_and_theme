@@ -112,10 +112,9 @@ class _HomeScreenState extends State<HomeScreen> {
         onClosing: () {},
         builder: (context) {
           return Container(
-            height: 210,
+            height: MediaQuery.of(context).size.height * 0.3,
             alignment: Alignment.center,
-            decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(16)),
+            color: Colors.white,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 7),
               child: Column(
@@ -157,9 +156,9 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TextWidget(text: title, color: ColorManager.primary, textSize: 20),
+            TextWidget(text: title, color: ColorManager.primary, textSize: 15),
             TextWidget(
-                text: subtitle, color: ColorManager.primary, textSize: 20),
+                text: subtitle, color: ColorManager.primary, textSize: 15),
           ],
         ),
       ),
