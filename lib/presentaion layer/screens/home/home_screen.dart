@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:sinric_app/presentaion%20layer/screens/home/rooms/rooms_screen.dart';
+import 'package:sinric_app/presentaion%20layer/screens/home/scenes/scenes_screen.dart';
 import 'package:sinric_app/presentaion%20layer/widgets/text_widget.dart';
 import 'package:sinric_app/shared/color_manager.dart';
 
 import '../../../notification_services/localization/applocal.dart';
 import '../../widgets/my_drawer.dart';
+import 'devices/devices_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -74,27 +77,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: const TabBarView(
           children: [
-            Center(
-              child: Image(
-                image: AssetImage('assets/images/smart_tv.png'),
-                height: 150,
-                width: 150,
-              ),
-            ),
-            Center(
-              child: Image(
-                image: AssetImage('assets/images/room_temperature.png'),
-                height: 150,
-                width: 150,
-              ),
-            ),
-            Center(
-              child: Image(
-                image: AssetImage('assets/images/smart_lock.png'),
-                height: 150,
-                width: 150,
-              ),
-            ),
+            DevicesScreen(),
+            RoomsScreen(),
+            ScenesScreen(),
           ],
         ),
         drawer: const MyDrawer(),
