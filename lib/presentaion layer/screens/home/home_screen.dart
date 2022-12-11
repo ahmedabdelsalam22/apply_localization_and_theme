@@ -106,20 +106,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   bottomSheetItem(
-                      title: 'Add Device',
-                      subtitle: 'Connect smart home devices to your account',
-                      onPressed: () {}),
+                    title: 'Add Device',
+                    subtitle: 'Connect smart home devices to your account',
+                    onPressed: () {},
+                  ),
                   const Divider(),
                   bottomSheetItem(
-                      title: 'Add Room',
-                      subtitle: 'Create new rooms and group devices together',
-                      onPressed: () {}),
+                    title: 'Add Room',
+                    subtitle: 'Create new rooms and group devices together',
+                    onPressed: () {},
+                  ),
                   const Divider(),
                   bottomSheetItem(
-                      title: 'Add Scene',
-                      subtitle:
-                          'Scene let your control multiple devices together',
-                      onPressed: () {})
+                    title: 'Add Scene',
+                    subtitle:
+                        'Scene let your control multiple devices together',
+                    onPressed: () {},
+                  )
                 ],
               ),
             ),
