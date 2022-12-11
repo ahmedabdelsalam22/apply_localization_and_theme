@@ -97,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
         onClosing: () {},
         builder: (context) {
           return Container(
-            height: MediaQuery.of(context).size.height * 0.3,
+            height: MediaQuery.of(context).size.height * 0.33,
             alignment: Alignment.center,
             color: Colors.white,
             child: Padding(
@@ -106,21 +106,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   bottomSheetItem(
-                    title: 'Add Device',
-                    subtitle: 'Connect smart home devices to your account',
+                    title: getLang(context, 'add_Device'),
+                    subtitle: getLang(
+                        context, 'connect_smart_home_devices_to_your_account'),
                     onPressed: () {},
                   ),
                   const Divider(),
                   bottomSheetItem(
-                    title: 'Add Room',
-                    subtitle: 'Create new rooms and group devices together',
+                    title: getLang(context, 'add_Room'),
+                    subtitle: getLang(
+                        context, 'create_new_rooms_and_group_devices_together'),
                     onPressed: () {},
                   ),
                   const Divider(),
                   bottomSheetItem(
-                    title: 'Add Scene',
-                    subtitle:
-                        'Scene let your control multiple devices together',
+                    title: getLang(context, 'add_Scene'),
+                    subtitle: getLang(context,
+                        'scene_let_your_control_multiple_devices_together'),
                     onPressed: () {},
                   )
                 ],
@@ -145,8 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextWidget(text: title, color: ColorManager.primary, textSize: 15),
-            TextWidget(
-                text: subtitle, color: ColorManager.primary, textSize: 15),
+            TextWidget(text: subtitle, color: Colors.grey, textSize: 15),
           ],
         ),
       ),
