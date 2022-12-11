@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sinric_app/notification_services/localization/applocal.dart';
 
+import '../../shared/app_router.dart';
 import '../../shared/color_manager.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -110,7 +111,9 @@ class MyDrawer extends StatelessWidget {
           buildDrawerListItem(
             leadingIcon: Icons.person,
             title: getLang(context, 'account'),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.accountScreenRoute);
+            },
           ),
           buildDrawerListItemsDivider(),
           buildDrawerListItem(
