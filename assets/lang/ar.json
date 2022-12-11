@@ -32,6 +32,33 @@
   "activityLog": "سجل النشاط",
   "config":"الاعدادات",
   "technicalSupport": "الدعم الفني",
-  "contact": "تواصل معنا"
+  "contact": "تواصل معنا",
+  "account_Settings": "اعدادات الحساب",
+  "edit_personnel_information": "تعديل بيانات الحساب",
+  "name_timezone": "الاسم والتوقيت الزمني",
+  "changePassword": "تغيير كلمه المرور",
+  "change_your_login_password": "تغيير كلمه المرور الخاصه بك",
+  "close_Account": "اغلاق الحساب",
+  "delete_your_account": "مسح الحساب الخاص بك",
+  "add_Device": "اضافه جهاز",
+  "connect_smart_home_devices_to_your_account": "اضافه جهاز للحساب الخاص بك",
+  "add_Room": "اضافه غرفه",
+  "create_new_rooms_and_group_devices_together": "انشاء غرف جديده ومجموعه من الاجهزه معا",
+  "add_Scene": "اضافه مشهد",
+  "scene_let_your_control_multiple_devices_together": "تسمج لك هذه الميزه بالتحكم في الاجهزه معا",
+  "no_devices_yet": "لاتوجد اجهزه حتي الان",
+  "your_devices_will_appear_here": "الاجهزه الخاصه بك ستظهر هنا",
+  "no_rooms_yet": "لاتوجد غرف حتي الان",
+  "your_rooms_will_appear_here": "الغرف الخاصه بك ستظهر هنا",
+  "your_scenes_will_appear_here": "المشاهد الخاصه بك ستظهر هنا",
+  "no_scenes_yet": "لاتوجد مشاهد حتي الان"
+
+
+
+
+
+
+
+
 
 }

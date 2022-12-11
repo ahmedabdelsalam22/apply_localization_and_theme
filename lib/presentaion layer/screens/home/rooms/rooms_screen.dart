@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sinric_app/notification_services/localization/applocal.dart';
 
 import '../empty_screen.dart';
 import 'rooms_list_view.dart';
@@ -11,9 +12,9 @@ class RoomsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return isEmpty
-        ? const EmptyScreen(
-            title: 'NO ROOMS YET',
-            subtitle: 'YOUR ROOMS WILL APPEAR HERE',
+        ? EmptyScreen(
+            title: getLang(context, 'no_rooms_yet'),
+            subtitle: getLang(context, 'your_rooms_will_appear_here'),
             img: 'assets/images/empty.png',
           )
         : const RoomsListView();

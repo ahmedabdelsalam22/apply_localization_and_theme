@@ -32,6 +32,25 @@
   "activityLog": "Activity Log",
   "config":"Configuration",
   "technicalSupport": "Technical Support",
-  "contact": "Contact"
+  "contact": "Contact",
+  "account_Settings": "Account Setting",
+  "edit_personnel_information": "Edit personnel information",
+  "name_timezone": "name and timezone",
+  "changePassword": "ChangePassword",
+  "change_your_login_password": "change your login password",
+  "close_Account": "Close Account",
+  "delete_your_account": "delete your account",
+  "add_Device": "Add Device",
+  "connect_smart_home_devices_to_your_account": "connect smart home devices to your account",
+  "add_Room": "Add Room",
+  "create_new_rooms_and_group_devices_together": "create new rooms and group devices together",
+  "add_Scene": "Add Scene",
+  "scene_let_your_control_multiple_devices_together": "Scene let your control multiple devices together",
+  "no_devices_yet": "NO DEVICES YET",
+  "your_devices_will_appear_here": "YOUR DEVICES WILL APPEAR HERE",
+  "your_rooms_will_appear_here": "YOUR ROOMS WILL APPEAR HERE",
+  "no_rooms_yet": "NO ROOMS YET",
+  "your_scenes_will_appear_here": "YOUR SCENES WILL APPEAR HERE",
+  "no_scenes_yet": "NO SCENES YET"
 
 }

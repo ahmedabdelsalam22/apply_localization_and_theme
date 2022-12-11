@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sinric_app/notification_services/localization/applocal.dart';
 import 'package:sinric_app/shared/color_manager.dart';
 
 import '../../widgets/text_widget.dart';
@@ -14,7 +15,7 @@ class AccountScreen extends StatelessWidget {
         backgroundColor: ColorManager.backGround,
         elevation: 0.0,
         title: TextWidget(
-            text: 'Account Settings',
+            text: getLang(context, 'account_Settings'),
             color: ColorManager.primary,
             textSize: 22),
         centerTitle: true,
@@ -28,12 +29,12 @@ class AccountScreen extends StatelessWidget {
               onTap: () {},
               leading: const Icon(Icons.person),
               title: TextWidget(
-                text: 'Edit personnel information',
+                text: getLang(context, 'edit_personnel_information'),
                 color: ColorManager.primary,
                 textSize: 23,
               ),
               subtitle: TextWidget(
-                text: 'name,timezone,phone number',
+                text: getLang(context, 'name_timezone'),
                 color: Colors.grey,
                 textSize: 15,
               ),
@@ -43,12 +44,12 @@ class AccountScreen extends StatelessWidget {
               onTap: () {},
               leading: const Icon(Icons.edit),
               title: TextWidget(
-                text: 'ChangePassword',
+                text: getLang(context, 'changePassword'),
                 color: ColorManager.primary,
                 textSize: 23,
               ),
               subtitle: TextWidget(
-                text: 'change your login password',
+                text: getLang(context, 'change_your_login_password'),
                 color: Colors.grey,
                 textSize: 15,
               ),
@@ -58,12 +59,12 @@ class AccountScreen extends StatelessWidget {
               onTap: () {},
               leading: const Icon(Icons.delete),
               title: TextWidget(
-                text: 'Close Account',
+                text: getLang(context, 'close_Account'),
                 color: ColorManager.primary,
                 textSize: 23,
               ),
               subtitle: TextWidget(
-                text: 'delete your account',
+                text: getLang(context, 'delete_your_account'),
                 color: Colors.grey,
                 textSize: 15,
               ),
