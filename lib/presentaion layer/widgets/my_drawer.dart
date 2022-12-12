@@ -93,7 +93,9 @@ class MyDrawer extends StatelessWidget {
           buildDrawerListItem(
             leadingIcon: Icons.meeting_room_rounded,
             title: getLang(context, 'rooms'),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.drawerRoomsScreenRoute);
+            },
           ),
           buildDrawerListItemsDivider(),
           buildDrawerListItem(

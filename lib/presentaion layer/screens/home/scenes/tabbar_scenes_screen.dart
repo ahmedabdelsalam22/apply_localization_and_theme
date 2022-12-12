@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:sinric_app/notification_services/localization/applocal.dart';
 
 import '../empty_screen.dart';
-import 'rooms_list_view.dart';
+import 'scenes_list_view.dart';
 
-class RoomsScreen extends StatelessWidget {
-  const RoomsScreen({Key? key}) : super(key: key);
+class TabBarScenesScreen extends StatelessWidget {
+  const TabBarScenesScreen({Key? key}) : super(key: key);
 
   final bool isEmpty = true;
 
@@ -13,10 +13,10 @@ class RoomsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return isEmpty
         ? EmptyScreen(
-            title: getLang(context, 'no_rooms_yet'),
-            subtitle: getLang(context, 'your_rooms_will_appear_here'),
+            title: getLang(context, 'no_scenes_yet'),
+            subtitle: getLang(context, 'your_scenes_will_appear_here'),
             img: 'assets/images/empty.png',
           )
-        : const RoomsListView();
+        : const ScenesListView();
   }
 }
