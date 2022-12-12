@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sinric_app/notification_services/localization/applocal.dart';
 import 'package:sinric_app/shared/color_manager.dart';
 
-import '../../widgets/text_widget.dart';
+import '../../../widgets/text_widget.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({Key? key}) : super(key: key);

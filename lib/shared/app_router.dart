@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:sinric_app/presentaion%20layer/screens/account/account_screen.dart';
+import 'package:sinric_app/presentaion%20layer/screens/drawer_inner_screen/drawer_rooms/drawer_rooms_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/forget_password/forget_pass_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/home/home_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/login/login_view.dart';
 import 'package:sinric_app/presentaion%20layer/screens/register/register_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/splash_screen.dart';
+
+import '../presentaion layer/screens/drawer_inner_screen/account/account_screen.dart';
 
 class AppRoutes {
   static const String loginScreenRoute = 'loginScreen';
@@ -13,6 +15,7 @@ class AppRoutes {
   static const String forgetPassScreenRoute = 'forgetPassScreen';
   static const String homeScreenRoute = 'homeScreen';
   static const String accountScreenRoute = 'accountScreen';
+  static const String drawerRoomsScreenRoute = 'drawerRoomsScreen';
 }
 
 class AppRouter {
@@ -35,6 +38,9 @@ class AppRouter {
 
       case AppRoutes.accountScreenRoute:
         return MaterialPageRoute(builder: (_) => const AccountScreen());
+
+      case AppRoutes.drawerRoomsScreenRoute:
+        return MaterialPageRoute(builder: (_) => const DrawerRoomsScreen());
 
       default:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
