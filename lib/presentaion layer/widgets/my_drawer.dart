@@ -101,13 +101,18 @@ class MyDrawer extends StatelessWidget {
           buildDrawerListItem(
             leadingIcon: Icons.schedule,
             title: getLang(context, 'schedules'),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(
+                  context, AppRoutes.drawerSchedulesScreenRoute);
+            },
           ),
           buildDrawerListItemsDivider(),
           buildDrawerListItem(
             leadingIcon: Icons.video_settings_sharp,
             title: getLang(context, 'scenes'),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.drawerScenesScreenRoute);
+            },
           ),
           buildDrawerListItemsDivider(),
           buildDrawerListItem(
@@ -145,7 +150,9 @@ class MyDrawer extends StatelessWidget {
           buildDrawerListItem(
             leadingIcon: Icons.logout,
             title: getLang(context, 'logOff'),
-            onTap: () {},
+            onTap: () {
+              //TODO with backend service
+            },
           ),
           buildDrawerListItemsDivider(),
         ],
