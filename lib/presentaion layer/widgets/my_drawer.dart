@@ -117,7 +117,7 @@ class MyDrawer extends StatelessWidget {
           buildDrawerListItemsDivider(),
           buildDrawerListItem(
             leadingIcon: Icons.person,
-            title: getLang(context, 'account'),
+            title: getLang(context, 'drawer_account'),
             onTap: () {
               Navigator.pushNamed(context, AppRoutes.accountScreenRoute);
             },

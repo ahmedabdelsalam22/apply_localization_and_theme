@@ -20,7 +20,7 @@ class LoginCubit extends Cubit<LoginStates> {
     notifyHelper.initializeNotification();
     notifyHelper.displayNotification(
       title: "You can login now",
-      body: 'or create account if you\'ve not',
+      body: 'or create drawer_account if you\'ve not',
     );
 
     emit(LoginNotificationState());
