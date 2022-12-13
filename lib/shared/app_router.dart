@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+ add_drawer_inners_screen
 import 'package:sinric_app/presentaion%20layer/screens/drawer_inner_screen/drawer_activity_log/drawer_activity_log_screen.dart';
+
+import 'package:sinric_app/presentaion%20layer/screens/bottom_sheet_inner_screen/bottom_sheet_room_screen.dart';
+ master
 import 'package:sinric_app/presentaion%20layer/screens/drawer_inner_screen/drawer_rooms/drawer_rooms_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/drawer_inner_screen/drawer_schedules/drawer_rooms_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/forget_password/forget_pass_screen.dart';
@@ -7,6 +11,7 @@ import 'package:sinric_app/presentaion%20layer/screens/home/home_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/login/login_view.dart';
 import 'package:sinric_app/presentaion%20layer/screens/register/register_screen.dart';
 
+import '../presentaion layer/screens/bottom_sheet_inner_screen/bottom_sheet_scene_screen.dart';
 import '../presentaion layer/screens/drawer_inner_screen/account/account_screen.dart';
 import '../presentaion layer/screens/drawer_inner_screen/drawer_scenes/drawer_rooms_screen.dart';
 import '../presentaion layer/screens/splash/splash_screen.dart';
@@ -21,7 +26,14 @@ class AppRoutes {
   static const String drawerRoomsScreenRoute = 'drawerRoomsScreen';
   static const String drawerScenesScreenRoute = 'drawerScenesScreen';
   static const String drawerSchedulesScreenRoute = 'drawerSchedulesScreen';
+ add_drawer_inners_screen
   static const String drawerActivityLogScreenRoute = 'drawerActivityLogScreen';
+
+  static const String bottomSheetAddRoomScreenRoute =
+      'bottomSheetAddRoomScreen';
+  static const String bottomSheetAddSceneScreenRoute =
+      'bottomSheetAddSceneScreen';
+ master
 }
 
 class AppRouter {
@@ -54,9 +66,17 @@ class AppRouter {
       case AppRoutes.drawerSchedulesScreenRoute:
         return MaterialPageRoute(builder: (_) => const DrawerSchedulesScreen());
 
+ add_drawer_inners_screen
       case AppRoutes.drawerActivityLogScreenRoute:
         return MaterialPageRoute(
             builder: (_) => const DrawerActivityLogScreen());
+
+      case AppRoutes.bottomSheetAddRoomScreenRoute:
+        return MaterialPageRoute(builder: (_) => BottomSheetAddRoomScreen());
+
+      case AppRoutes.bottomSheetAddSceneScreenRoute:
+        return MaterialPageRoute(builder: (_) => BottomSheetAddSceneScreen());
+ master
 
       default:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
