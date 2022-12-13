@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sinric_app/notification_services/localization/applocal.dart';
 import 'package:sinric_app/presentaion%20layer/widgets/text_widget.dart';
+import 'package:sinric_app/shared/app_router.dart';
 import 'package:sinric_app/shared/color_manager.dart';
 
 class DrawerSchedulesScreen extends StatelessWidget {
@@ -21,7 +22,10 @@ class DrawerSchedulesScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(
+                  context, AppRoutes.drawerAddNewSchedulesScreenRoute);
+            },
             icon: const Icon(Icons.add),
           ),
           IconButton(

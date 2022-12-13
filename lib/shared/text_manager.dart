@@ -11,7 +11,7 @@ class TextManager {
   static const String loginSuccess = 'Login Success';
   static const String loginFailed = 'Login Failed';
   static const String registerFailed = 'Register Failed';
-  static const String iHaveNoAccount = "I've not an account?";
+  static const String iHaveNoAccount = "I've not an drawer_account?";
   static const String discount = 'Discount';
   static const String pleaseEnterName = 'Please Enter Name';
   static const String userName = 'userName';
@@ -22,6 +22,6 @@ class TextManager {
   static const String update = 'Update';
   static const String logOut = 'LogOut';
   static const String registerNowTo = 'Register now to browse our offers';
-  static const String iHaveAccount = "I've an account?";
+  static const String iHaveAccount = "I've an drawer_account?";
   static const String search = 'search';
 }
