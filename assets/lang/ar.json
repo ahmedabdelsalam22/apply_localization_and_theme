@@ -19,6 +19,7 @@
   "or": "-او-",
   "Castle_Black_Tech": "القلعه التكنولوجيه",
   "please_enter_name": "من فضلك ادخل الاسم",
+  "please_enter_description": "من فضلك ادخل الوصف",
   "Enter_a_valid_number": "من فضلك ادخل رقم الهاتف",
   "Sign_in_with_google": "تسجيل الدخول بحساب جوجل",
   "i_have_no_account": "لا املك حساب",
@@ -52,7 +53,13 @@
   "your_rooms_will_appear_here": "الغرف الخاصه بك ستظهر هنا",
   "your_scenes_will_appear_here": "المشاهد الخاصه بك ستظهر هنا",
   "no_scenes_yet": "لاتوجد مشاهد حتي الان",
-  "living_Room": "غرفه المعيشه"
+  "living_Room": "غرفه المعيشه",
+  "new_room": "غرفه جديده",
+  "room_name": "اسم الغرفه",
+  "description": "الوصف",
+  "save": "حفظ"
+
+
 
 
 
