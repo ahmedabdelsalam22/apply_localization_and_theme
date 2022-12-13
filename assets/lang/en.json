@@ -35,6 +35,7 @@
   "contact": "Contact",
   "account_Settings": "Account Setting",
   "edit_personnel_information": "Edit personnel information",
+  "please_enter_description": "please enter description",
   "name_timezone": "name and timezone",
   "changePassword": "ChangePassword",
   "change_your_login_password": "change your login password",
@@ -52,6 +53,12 @@
   "no_rooms_yet": "NO ROOMS YET",
   "your_scenes_will_appear_here": "YOUR SCENES WILL APPEAR HERE",
   "no_scenes_yet": "NO SCENES YET",
-  "living_Room": "Living Room"
+  "living_Room": "Living Room",
+  "new_room": "NEW ROOM",
+  "room_name": "Room Name",
+  "description": "Description",
+  "save": "Save"
+
+
 
 }
