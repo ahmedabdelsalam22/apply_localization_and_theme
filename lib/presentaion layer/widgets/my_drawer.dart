@@ -127,7 +127,8 @@ class MyDrawer extends StatelessWidget {
             leadingIcon: Icons.history,
             title: getLang(context, 'activityLog'),
             onTap: () {
-              // TODO
+              Navigator.pushNamed(
+                  context, AppRoutes.drawerActivityLogScreenRoute);
             },
           ),
           buildDrawerListItemsDivider(),
