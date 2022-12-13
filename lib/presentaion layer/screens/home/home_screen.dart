@@ -109,21 +109,27 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: getLang(context, 'add_Device'),
                     subtitle: getLang(
                         context, 'connect_smart_home_devices_to_your_account'),
-                    onPressed: () {},
+                    onPressed: () {
+                      // TODO ADD DEVICE FIELD SCREEN (QR CODE)
+                    },
                   ),
                   const Divider(),
                   bottomSheetItem(
                     title: getLang(context, 'add_Room'),
                     subtitle: getLang(
                         context, 'create_new_rooms_and_group_devices_together'),
-                    onPressed: () {},
+                    onPressed: () {
+                      // TODO  FIELD SCREEN
+                    },
                   ),
                   const Divider(),
                   bottomSheetItem(
                     title: getLang(context, 'add_Scene'),
                     subtitle: getLang(context,
                         'scene_let_your_control_multiple_devices_together'),
-                    onPressed: () {},
+                    onPressed: () {
+                      // TODO FIELD SCREEN
+                    },
                   )
                 ],
               ),

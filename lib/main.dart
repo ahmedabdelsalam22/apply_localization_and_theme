@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sinric_app/presentaion%20layer/screens/splash_screen.dart';
+import 'package:sinric_app/presentaion%20layer/screens/splash/splash_screen.dart';
 import 'package:sinric_app/shared/app_router.dart';
 import 'package:sinric_app/shared/theme/themes.dart';
 

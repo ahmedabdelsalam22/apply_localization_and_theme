@@ -5,10 +5,10 @@ import 'package:sinric_app/presentaion%20layer/screens/forget_password/forget_pa
 import 'package:sinric_app/presentaion%20layer/screens/home/home_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/login/login_view.dart';
 import 'package:sinric_app/presentaion%20layer/screens/register/register_screen.dart';
-import 'package:sinric_app/presentaion%20layer/screens/splash_screen.dart';
 
 import '../presentaion layer/screens/drawer_inner_screen/account/account_screen.dart';
 import '../presentaion layer/screens/drawer_inner_screen/drawer_scenes/drawer_rooms_screen.dart';
+import '../presentaion layer/screens/splash/splash_screen.dart';
 
 class AppRoutes {
   static const String loginScreenRoute = 'loginScreen';

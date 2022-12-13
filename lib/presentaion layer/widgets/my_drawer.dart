@@ -126,25 +126,33 @@ class MyDrawer extends StatelessWidget {
           buildDrawerListItem(
             leadingIcon: Icons.history,
             title: getLang(context, 'activityLog'),
-            onTap: () {},
+            onTap: () {
+              // TODO
+            },
           ),
           buildDrawerListItemsDivider(),
           buildDrawerListItem(
             leadingIcon: Icons.confirmation_number_outlined,
             title: getLang(context, 'config'),
-            onTap: () {},
+            onTap: () {
+              // TODO
+            },
           ),
           buildDrawerListItemsDivider(),
           buildDrawerListItem(
             leadingIcon: Icons.help_outline,
             title: getLang(context, 'technicalSupport'),
-            onTap: () {},
+            onTap: () {
+              // TODO
+            },
           ),
           buildDrawerListItemsDivider(),
           buildDrawerListItem(
             leadingIcon: Icons.call,
             title: getLang(context, 'contact'),
-            onTap: () {},
+            onTap: () {
+              // TODO
+            },
           ),
           buildDrawerListItemsDivider(),
           buildDrawerListItem(
