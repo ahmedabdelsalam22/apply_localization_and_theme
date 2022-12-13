@@ -5,6 +5,7 @@ import 'package:sinric_app/presentaion%20layer/widgets/text_widget.dart';
 import 'package:sinric_app/shared/color_manager.dart';
 
 import '../../../notification_services/localization/applocal.dart';
+import '../../../shared/app_router.dart';
 import '../../widgets/my_drawer.dart';
 import 'devices/tabbar_devices_screen.dart';
 
@@ -119,7 +120,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     subtitle: getLang(
                         context, 'create_new_rooms_and_group_devices_together'),
                     onPressed: () {
-                      // TODO  FIELD SCREEN
+                      Navigator.pushNamed(
+                          context, AppRoutes.bottomSheetAddRoomScreenRoute);
                     },
                   ),
                   const Divider(),
@@ -128,7 +130,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     subtitle: getLang(context,
                         'scene_let_your_control_multiple_devices_together'),
                     onPressed: () {
-                      // TODO FIELD SCREEN
+                      Navigator.pushNamed(
+                          context, AppRoutes.bottomSheetAddSceneScreenRoute);
                     },
                   )
                 ],
