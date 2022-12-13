@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sinric_app/presentaion%20layer/screens/drawer_inner_screen/drawer_activity_log/drawer_activity_log_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/drawer_inner_screen/drawer_rooms/drawer_rooms_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/drawer_inner_screen/drawer_schedules/drawer_rooms_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/forget_password/forget_pass_screen.dart';
@@ -20,6 +21,7 @@ class AppRoutes {
   static const String drawerRoomsScreenRoute = 'drawerRoomsScreen';
   static const String drawerScenesScreenRoute = 'drawerScenesScreen';
   static const String drawerSchedulesScreenRoute = 'drawerSchedulesScreen';
+  static const String drawerActivityLogScreenRoute = 'drawerActivityLogScreen';
 }
 
 class AppRouter {
@@ -51,6 +53,10 @@ class AppRouter {
 
       case AppRoutes.drawerSchedulesScreenRoute:
         return MaterialPageRoute(builder: (_) => const DrawerSchedulesScreen());
+
+      case AppRoutes.drawerActivityLogScreenRoute:
+        return MaterialPageRoute(
+            builder: (_) => const DrawerActivityLogScreen());
 
       default:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
