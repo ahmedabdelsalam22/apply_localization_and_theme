@@ -4,10 +4,10 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../notification_services/localization/applocal.dart';
-import '../../notification_services/notification_service.dart';
-import '../../shared/app_router.dart';
-import '../../shared/color_manager.dart';
+import '../../../../notification_services/localization/applocal.dart';
+import '../../../../notification_services/notification_service.dart';
+import '../../../../shared/app_router.dart';
+import '../../../../shared/color_manager.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
