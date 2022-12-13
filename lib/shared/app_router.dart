@@ -7,6 +7,7 @@ import 'package:sinric_app/presentaion%20layer/screens/home/home_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/login/login_view.dart';
 import 'package:sinric_app/presentaion%20layer/screens/register/register_screen.dart';
 
+import '../presentaion layer/screens/bottom_sheet_inner_screen/bottom_sheet_scene_screen.dart';
 import '../presentaion layer/screens/drawer_inner_screen/account/account_screen.dart';
 import '../presentaion layer/screens/drawer_inner_screen/drawer_scenes/drawer_rooms_screen.dart';
 import '../presentaion layer/screens/splash/splash_screen.dart';
@@ -23,6 +24,8 @@ class AppRoutes {
   static const String drawerSchedulesScreenRoute = 'drawerSchedulesScreen';
   static const String bottomSheetAddRoomScreenRoute =
       'bottomSheetAddRoomScreen';
+  static const String bottomSheetAddSceneScreenRoute =
+      'bottomSheetAddSceneScreen';
 }
 
 class AppRouter {
@@ -57,6 +60,9 @@ class AppRouter {
 
       case AppRoutes.bottomSheetAddRoomScreenRoute:
         return MaterialPageRoute(builder: (_) => BottomSheetAddRoomScreen());
+
+      case AppRoutes.bottomSheetAddSceneScreenRoute:
+        return MaterialPageRoute(builder: (_) => BottomSheetAddSceneScreen());
 
       default:
         return MaterialPageRoute(builder: (_) => const SplashScreen());

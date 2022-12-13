@@ -130,7 +130,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     subtitle: getLang(context,
                         'scene_let_your_control_multiple_devices_together'),
                     onPressed: () {
-                      // TODO FIELD SCREEN
+                      Navigator.pushNamed(
+                          context, AppRoutes.bottomSheetAddSceneScreenRoute);
                     },
                   )
                 ],

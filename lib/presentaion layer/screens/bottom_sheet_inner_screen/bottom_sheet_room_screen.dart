@@ -4,6 +4,7 @@ import 'package:sinric_app/presentaion%20layer/widgets/text_widget.dart';
 import '../../../notification_services/localization/applocal.dart';
 import '../../../shared/color_manager.dart';
 import '../../../shared/components.dart';
+import 'drop_down_menu_widget.dart';
 
 class BottomSheetAddRoomScreen extends StatelessWidget {
   BottomSheetAddRoomScreen({Key? key}) : super(key: key);
@@ -87,56 +88,6 @@ class BottomSheetAddRoomScreen extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class DropDownMenuComponent extends StatelessWidget {
-  final void Function(String? value) onChanged;
-  final List<String> items;
-  final String hint;
-
-  const DropDownMenuComponent({
-    Key? key,
-    required this.onChanged,
-    required this.items,
-    required this.hint,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      decoration: BoxDecoration(
-        shape: BoxShape.rectangle,
-        border: Border.all(color: Colors.grey, width: 1.0),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(top: 10),
-        child: DropdownButtonFormField<String>(
-          decoration: const InputDecoration.collapsed(hintText: ''),
-          value: null,
-          icon: const Icon(Icons.arrow_drop_down),
-          isExpanded: true,
-          elevation: 16,
-          style: Theme.of(context).textTheme.headline5,
-          hint: FittedBox(
-            child: Text(hint),
-          ),
-          onChanged: onChanged,
-          items: items.map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(
-                value,
-                style: const TextStyle(fontSize: 20),
-              ),
-            );
-          }).toList(),
         ),
       ),
     );

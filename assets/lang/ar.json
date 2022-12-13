@@ -57,7 +57,10 @@
   "new_room": "غرفه جديده",
   "room_name": "اسم الغرفه",
   "description": "الوصف",
-  "save": "حفظ"
+  "save": "حفظ",
+  "new_scene": "مشهد جديد",
+  "scene_name": "اسم المشهد"
+
 
 
 

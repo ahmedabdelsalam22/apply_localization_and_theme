@@ -24,7 +24,7 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
-  bool arabicLang = true;
+  bool arabicLang = false;
 
   // This widget is the root of your application.
   @override
