@@ -57,8 +57,7 @@
   "new_room": "NEW ROOM",
   "room_name": "Room Name",
   "description": "Description",
-  "save": "Save"
-
-
-
+  "save": "Save",
+  "new_scene": "NEW SCENE",
+  "scene_name": "Scene Name"
 }
