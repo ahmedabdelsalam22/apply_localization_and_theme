@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:sinric_app/presentaion%20layer/screens/drawer_inner_screen/drawer_activity_log/drawer_activity_log_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/drawer_inner_screen/drawer_rooms/drawer_rooms_screen.dart';
-import 'package:sinric_app/presentaion%20layer/screens/drawer_inner_screen/drawer_schedules/drawer_rooms_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/forget_password/forget_pass_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/home/home_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/login/login_view.dart';
 import 'package:sinric_app/presentaion%20layer/screens/register/register_screen.dart';
 
-import '../presentaion layer/screens/drawer_inner_screen/account/account_screen.dart';
-import '../presentaion layer/screens/drawer_inner_screen/drawer_scenes/drawer_rooms_screen.dart';
+import '../presentaion layer/screens/drawer_inner_screen/drawer_account/account_screen.dart';
+import '../presentaion layer/screens/drawer_inner_screen/drawer_scenes/drawer_scenes_screen.dart';
+import '../presentaion layer/screens/drawer_inner_screen/drawer_schedules/drawer_add_new_schedules_screen.dart';
+import '../presentaion layer/screens/drawer_inner_screen/drawer_schedules/drawer_schedules_screen.dart';
 import '../presentaion layer/screens/splash/splash_screen.dart';
 
 class AppRoutes {
@@ -22,6 +23,12 @@ class AppRoutes {
   static const String drawerScenesScreenRoute = 'drawerScenesScreen';
   static const String drawerSchedulesScreenRoute = 'drawerSchedulesScreen';
   static const String drawerActivityLogScreenRoute = 'drawerActivityLogScreen';
+  static const String drawerAddNewSchedulesScreenRoute =
+      'drawerAddNewSchedulesScreen';
+  static const String bottomSheetAddRoomScreenRoute =
+      'bottomSheetAddRoomScreen';
+  static const String bottomSheetAddSceneScreenRoute =
+      'bottomSheetAddSceneScreen';
 }
 
 class AppRouter {
@@ -57,6 +64,9 @@ class AppRouter {
       case AppRoutes.drawerActivityLogScreenRoute:
         return MaterialPageRoute(
             builder: (_) => const DrawerActivityLogScreen());
+
+      case AppRoutes.drawerAddNewSchedulesScreenRoute:
+        return MaterialPageRoute(builder: (_) => DrawerAddNewSchedulesScreen());
 
       default:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
