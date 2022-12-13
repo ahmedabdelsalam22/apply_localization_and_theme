@@ -11,6 +11,7 @@ class BottomSheetAddRoomScreen extends StatelessWidget {
 
   var roomNameController = TextEditingController();
   var descriptionController = TextEditingController();
+  var formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -30,63 +31,68 @@ class BottomSheetAddRoomScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(18.0),
-          child: Column(
-            children: [
-              const SizedBox(height: 50),
-              Row(
-                children: [
-                  TextWidget(
-                    text: getLang(context, "home") + ': ',
-                    color: ColorManager.primary,
-                    textSize: 20,
-                  ),
-                  Expanded(
-                    child: DropDownMenuComponent(
-                      onChanged: (String? value) {},
-                      hint: getLang(context, "home"),
-                      items: [
-                        getLang(context, "home"),
-                      ],
+          child: Form(
+            key: formKey,
+            child: Column(
+              children: [
+                const SizedBox(height: 50),
+                Row(
+                  children: [
+                    TextWidget(
+                      text: getLang(context, "home") + ': ',
+                      color: ColorManager.primary,
+                      textSize: 20,
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              buildTextFormField(
-                controller: roomNameController,
-                inputType: TextInputType.text,
-                validate: (String? val) {
-                  if (val!.isEmpty) {
-                    return getLang(context, "please_enter_name");
-                  }
-                  return null;
-                },
-                label: getLang(context, "room_name"),
-                prefixIcon: Icons.drive_file_rename_outline,
-                obscureText: false,
-              ),
-              const SizedBox(height: 20),
-              buildTextFormField(
-                controller: descriptionController,
-                inputType: TextInputType.text,
-                validate: (String? val) {
-                  if (val!.isEmpty) {
-                    return getLang(context, "please_enter_description");
-                  }
-                  return null;
-                },
-                label: getLang(context, "description"),
-                prefixIcon: Icons.description,
-                obscureText: false,
-              ),
-              const SizedBox(height: 50),
-              defaultButton(
-                onPressed: () {
-                  // TODO
-                },
-                text: getLang(context, "save"),
-              ),
-            ],
+                    Expanded(
+                      child: DropDownMenuComponent(
+                        onChanged: (String? value) {},
+                        hint: getLang(context, "home"),
+                        items: [
+                          getLang(context, "home"),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                buildTextFormField(
+                  controller: roomNameController,
+                  inputType: TextInputType.text,
+                  validate: (String? val) {
+                    if (val!.isEmpty) {
+                      return getLang(context, "please_enter_name");
+                    }
+                    return null;
+                  },
+                  label: getLang(context, "room_name"),
+                  prefixIcon: Icons.drive_file_rename_outline,
+                  obscureText: false,
+                ),
+                const SizedBox(height: 20),
+                buildTextFormField(
+                  controller: descriptionController,
+                  inputType: TextInputType.text,
+                  validate: (String? val) {
+                    if (val!.isEmpty) {
+                      return getLang(context, "please_enter_description");
+                    }
+                    return null;
+                  },
+                  label: getLang(context, "description"),
+                  prefixIcon: Icons.description,
+                  obscureText: false,
+                ),
+                const SizedBox(height: 50),
+                defaultButton(
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      // TODO
+                    }
+                  },
+                  text: getLang(context, "save"),
+                ),
+              ],
+            ),
           ),
         ),
       ),
