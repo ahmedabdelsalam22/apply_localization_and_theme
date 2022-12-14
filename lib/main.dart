@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:sinric_app/presentaion%20layer/screens/splash/splash_screen.dart';
 import 'package:sinric_app/shared/app_router.dart';
 import 'package:sinric_app/shared/dark_theme_services/dark_theme_provider.dart';
+import 'package:sinric_app/shared/localization_provider/localization_provider.dart';
 import 'package:sinric_app/shared/theme_const/themes.dart';
 
 import 'notification_services/localization/applocal.dart';
@@ -34,15 +35,22 @@ class _MyAppState extends State<MyApp> {
   bool arabicLang = false;
 
   DarkThemeProvider themeChangeProvider = DarkThemeProvider();
+  LocalizationProvider localizationProvider = LocalizationProvider();
 
   void getCurrentAppTheme() async {
     themeChangeProvider.setDarkTheme =
         await themeChangeProvider.darkThemePrefs.getTheme();
   }
 
+  void getCurrentAppLang() async {
+    localizationProvider.setArabicLang =
+        await localizationProvider.localizationPrefs.getLang();
+  }
+
   @override
   void initState() {
     getCurrentAppTheme();
+    getCurrentAppLang();
     super.initState();
   }
 
@@ -57,41 +65,43 @@ class _MyAppState extends State<MyApp> {
         return MultiProvider(
           providers: [
             ChangeNotifierProvider(create: (_) => themeChangeProvider),
+            ChangeNotifierProvider(create: (_) => localizationProvider),
           ],
-          child: Consumer<DarkThemeProvider>(
-            builder: (context, themeProvider, child) {
-              return MaterialApp(
-                debugShowCheckedModeBanner: false,
-                theme: Styles.themeData(themeProvider.getDarkTheme, context),
-                home: const SplashScreen(),
-                onGenerateRoute: AppRouter.generateRoute,
-                initialRoute: AppRoutes.splashScreenRoute,
-                localizationsDelegates: const [
-                  AppLocale.delegate,
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate,
-                  GlobalCupertinoLocalizations.delegate
-                ],
-                supportedLocales: const [
-                  Locale("en", ""),
-                  Locale("ar", ""),
-                ],
-                locale: arabicLang
-                    ? const Locale("ar", "")
-                    : const Locale("en", ""),
-                localeResolutionCallback: (currentLang, supportLang) {
-                  if (currentLang != null) {
-                    for (Locale locale in supportLang) {
-                      if (locale.languageCode == currentLang.languageCode) {
-                        return currentLang;
-                      }
+          builder: (context, child) {
+            final themeProvider = Provider.of<DarkThemeProvider>(context);
+            final langProvider = Provider.of<LocalizationProvider>(context);
+
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: Styles.themeData(themeProvider.getDarkTheme, context),
+              home: const SplashScreen(),
+              onGenerateRoute: AppRouter.generateRoute,
+              initialRoute: AppRoutes.splashScreenRoute,
+              localizationsDelegates: const [
+                AppLocale.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate
+              ],
+              supportedLocales: const [
+                Locale("en", ""),
+                Locale("ar", ""),
+              ],
+              locale: langProvider.getArabicLang
+                  ? const Locale("ar", "")
+                  : const Locale("en", ""),
+              localeResolutionCallback: (currentLang, supportLang) {
+                if (currentLang != null) {
+                  for (Locale locale in supportLang) {
+                    if (locale.languageCode == currentLang.languageCode) {
+                      return currentLang;
                     }
                   }
-                  return supportLang.first;
-                },
-              );
-            },
-          ),
+                }
+                return supportLang.first;
+              },
+            );
+          },
         );
       },
     );

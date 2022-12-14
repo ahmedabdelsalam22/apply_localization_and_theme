@@ -35,7 +35,10 @@ class LoginScreen extends StatelessWidget {
           var cubit = LoginCubit.get(context);
 
           return Scaffold(
-            appBar: AppBar(automaticallyImplyLeading: false),
+            appBar: AppBar(
+              automaticallyImplyLeading: false,
+              elevation: 0.0,
+            ),
             body: Center(
               child: SingleChildScrollView(
                 child: Padding(

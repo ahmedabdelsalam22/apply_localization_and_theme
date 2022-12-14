@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sinric_app/notification_services/localization/applocal.dart';
 import 'package:sinric_app/shared/dark_theme_services/dark_theme_provider.dart';
+import 'package:sinric_app/shared/localization_provider/localization_provider.dart';
 
 import '../../shared/app_router.dart';
 import '../../shared/color_manager.dart';
@@ -84,6 +85,9 @@ class MyDrawer extends StatelessWidget {
     final themeState = Provider.of<DarkThemeProvider>(context);
     bool isDark = themeState.getDarkTheme;
 
+    final langState = Provider.of<LocalizationProvider>(context);
+    bool isArabic = langState.getArabicLang;
+
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -153,11 +157,21 @@ class MyDrawer extends StatelessWidget {
             },
           ),
           buildDrawerListItemsDivider(),
-          buildDrawerListItem(
-            leadingIcon: Icons.call,
-            title: getLang(context, 'contact'),
-            onTap: () {
-              // TODO
+          //
+          SwitchListTile(
+            title: Text(
+              isArabic
+                  ? getLang(context, "arabic")
+                  : getLang(context, "english"),
+            ),
+            activeColor: ColorManager.primary,
+            secondary: Icon(
+              Icons.language,
+              color: ColorManager.primary,
+            ),
+            value: isArabic,
+            onChanged: (bool value) {
+              langState.setArabicLang = value;
             },
           ),
           buildDrawerListItemsDivider(),
@@ -172,7 +186,7 @@ class MyDrawer extends StatelessWidget {
               isDark ? Icons.light_mode : Icons.dark_mode,
               color: ColorManager.primary,
             ),
-            value: themeState.getDarkTheme,
+            value: isDark,
             onChanged: (bool value) {
               themeState.setDarkTheme = value;
             },
