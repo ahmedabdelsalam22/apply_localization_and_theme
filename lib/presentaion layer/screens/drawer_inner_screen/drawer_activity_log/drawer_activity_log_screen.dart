@@ -11,9 +11,7 @@ class DrawerActivityLogScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManager.backGround,
       appBar: AppBar(
-        backgroundColor: ColorManager.backGround,
         elevation: 0.0,
         centerTitle: true,
         title: TextWidget(

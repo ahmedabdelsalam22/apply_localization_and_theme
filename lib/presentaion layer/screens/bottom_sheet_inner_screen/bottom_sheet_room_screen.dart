@@ -16,10 +16,8 @@ class BottomSheetAddRoomScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManager.backGround,
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: ColorManager.backGround,
         centerTitle: true,
         title: TextWidget(
           isTitle: true,

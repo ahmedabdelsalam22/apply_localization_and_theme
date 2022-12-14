@@ -24,10 +24,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        backgroundColor: ColorManager.backGround,
         appBar: AppBar(
           elevation: 0.0,
-          backgroundColor: ColorManager.backGround,
           centerTitle: true,
           title: Text(
             getLang(context, 'home'),
@@ -100,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
           return Container(
             height: MediaQuery.of(context).size.height * 0.33,
             alignment: Alignment.center,
-            color: Colors.white,
+            //color: Colors.white,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 7),
               child: Column(

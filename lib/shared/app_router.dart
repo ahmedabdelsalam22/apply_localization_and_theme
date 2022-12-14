@@ -3,9 +3,11 @@ import 'package:sinric_app/presentaion%20layer/screens/drawer_inner_screen/drawe
 import 'package:sinric_app/presentaion%20layer/screens/drawer_inner_screen/drawer_rooms/drawer_rooms_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/forget_password/forget_pass_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/home/home_screen.dart';
-import 'package:sinric_app/presentaion%20layer/screens/login/login_view.dart';
+import 'package:sinric_app/presentaion%20layer/screens/login/login_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/register/register_screen.dart';
 
+import '../presentaion layer/screens/bottom_sheet_inner_screen/bottom_sheet_room_screen.dart';
+import '../presentaion layer/screens/bottom_sheet_inner_screen/bottom_sheet_scene_screen.dart';
 import '../presentaion layer/screens/drawer_inner_screen/drawer_account/account_screen.dart';
 import '../presentaion layer/screens/drawer_inner_screen/drawer_scenes/drawer_scenes_screen.dart';
 import '../presentaion layer/screens/drawer_inner_screen/drawer_schedules/drawer_add_new_schedules_screen.dart';
@@ -67,6 +69,12 @@ class AppRouter {
 
       case AppRoutes.drawerAddNewSchedulesScreenRoute:
         return MaterialPageRoute(builder: (_) => DrawerAddNewSchedulesScreen());
+
+      case AppRoutes.bottomSheetAddRoomScreenRoute:
+        return MaterialPageRoute(builder: (_) => BottomSheetAddRoomScreen());
+
+      case AppRoutes.bottomSheetAddSceneScreenRoute:
+        return MaterialPageRoute(builder: (_) => BottomSheetAddSceneScreen());
 
       default:
         return MaterialPageRoute(builder: (_) => const SplashScreen());

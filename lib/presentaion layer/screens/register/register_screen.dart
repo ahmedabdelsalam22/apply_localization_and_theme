@@ -2,6 +2,7 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:sinric_app/presentaion%20layer/screens/register/register_cubit/register_cubit.dart';
 import 'package:sinric_app/presentaion%20layer/screens/register/register_cubit/register_state.dart';
 
@@ -9,7 +10,7 @@ import '../../../notification_services/localization/applocal.dart';
 import '../../../shared/app_router.dart';
 import '../../../shared/color_manager.dart';
 import '../../../shared/components.dart';
-import '../../widgets/back_widget.dart';
+import '../../../shared/dark_theme_services/dark_theme_provider.dart';
 import '../../widgets/google_button.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -26,6 +27,9 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeState = Provider.of<DarkThemeProvider>(context);
+    bool isDark = themeState.getDarkTheme;
+
     return BlocProvider(
       create: (context) => RegisterCubit(),
       child: BlocConsumer<RegisterCubit, RegisterStates>(
@@ -33,11 +37,8 @@ class RegisterScreen extends StatelessWidget {
         builder: (context, state) {
           var cubit = RegisterCubit.get(context);
           return Scaffold(
-            backgroundColor: Colors.white,
             appBar: AppBar(
               elevation: 0.0,
-              backgroundColor: Colors.white,
-              leading: const BackWidget(),
             ),
             body: Center(
               child: SingleChildScrollView(
@@ -144,6 +145,9 @@ class RegisterScreen extends StatelessWidget {
                           children: [
                             Text(
                               getLang(context, "i_have_account"),
+                              style: TextStyle(
+                                color: isDark ? Colors.white : Colors.black,
+                              ),
                             ),
                             defaultTextButton(
                                 text: getLang(context, "login"),
@@ -158,8 +162,10 @@ class RegisterScreen extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Text(
                             getLang(context, "or"),
-                            style: const TextStyle(
-                                color: Colors.black, fontSize: 18),
+                            style: TextStyle(
+                              color: isDark ? Colors.white : Colors.black,
+                              fontSize: 18,
+                            ),
                           ),
                         ),
                         SizedBox(height: 5.h),
