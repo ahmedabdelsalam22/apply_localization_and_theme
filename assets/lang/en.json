@@ -61,5 +61,7 @@
   "new_scene": "NEW SCENE",
   "scene_name": "Scene Name",
   "light_mode": "Light Mode",
-  "dark_mode": "Dark Mode"
+  "dark_mode": "Dark Mode",
+  "arabic": "Arabic",
+  "english": "English"
 }
