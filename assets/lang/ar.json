@@ -59,7 +59,10 @@
   "description": "الوصف",
   "save": "حفظ",
   "new_scene": "مشهد جديد",
-  "scene_name": "اسم المشهد"
+  "scene_name": "اسم المشهد",
+  "light_mode": "الوضع اليومي",
+  "dark_mode": "الوضع الليلي"
+
 
 
 

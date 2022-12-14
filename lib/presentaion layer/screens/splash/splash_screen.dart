@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -8,6 +7,7 @@ import '../../../../notification_services/localization/applocal.dart';
 import '../../../../notification_services/notification_service.dart';
 import '../../../../shared/app_router.dart';
 import '../../../../shared/color_manager.dart';
+import '../../widgets/text_widget.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -46,31 +46,27 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      appBar: AppBar(automaticallyImplyLeading: false),
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(height: 180.h),
-            Image.asset(
-              'assets/images/splash.png',
-              height: 200.h,
-              width: 200.w,
-            ),
-            SizedBox(height: 20.h),
-            TextLiquidFill(
-              text: getLang(context, "Castle_Black_Tech"),
-              waveColor: ColorManager.primary,
-              boxBackgroundColor: Colors.white,
-              loadDuration: const Duration(seconds: 3),
-              loadUntil: 1,
-              textStyle: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30.0.sp,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(height: 180.h),
+              Image.asset(
+                'assets/images/splash.png',
+                height: 200.h,
+                width: 200.w,
               ),
-              boxHeight: 300.0.h,
-            ),
-          ],
+              SizedBox(height: 150.h),
+              TextWidget(
+                text: getLang(context, "Castle_Black_Tech"),
+                textSize: 22,
+                color: ColorManager.primary,
+                isTitle: true,
+              ),
+            ],
+          ),
         ),
       ),
     );

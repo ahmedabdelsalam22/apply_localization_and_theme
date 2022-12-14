@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../notification_services/localization/applocal.dart';
 import '../../../shared/app_router.dart';
 import '../../../shared/color_manager.dart';
 import '../../../shared/components.dart';
+import '../../../shared/dark_theme_services/dark_theme_provider.dart';
 import '../../widgets/back_widget.dart';
 import '../../widgets/text_widget.dart';
 
@@ -20,12 +22,13 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final themeState = Provider.of<DarkThemeProvider>(context);
+    bool isDark = themeState.getDarkTheme;
+
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0.0,
         leading: const BackWidget(),
-        backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -39,7 +42,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   const SizedBox(height: 10),
                   TextWidget(
                     text: getLang(context, "Forget_your_password"),
-                    color: Colors.black,
+                    color: isDark ? Colors.white : Colors.black,
                     textSize: 25,
                   ),
                   const SizedBox(height: 20),
@@ -48,7 +51,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   TextWidget(
                     text: getLang(
                         context, "Don't_worry_enter_your_registered_email"),
-                    color: Colors.grey,
+                    color: isDark ? Colors.white : Colors.grey,
                     textSize: 16,
                   ),
                   const SizedBox(height: 30),
@@ -96,7 +99,11 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   ),
                   Row(
                     children: [
-                      Text(getLang(context, "I_remembered_password")),
+                      Text(
+                        getLang(context, "I_remembered_password"),
+                        style: TextStyle(
+                            color: isDark ? Colors.white : Colors.black),
+                      ),
                       TextButton(
                         onPressed: () {
                           Navigator.pushNamed(

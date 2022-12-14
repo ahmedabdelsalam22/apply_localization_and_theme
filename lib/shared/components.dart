@@ -8,7 +8,10 @@ Widget defaultTextButton({required Function onPressed, required String text}) {
       onPressed: () {
         onPressed();
       },
-      child: Text(text));
+      child: Text(
+        text,
+        style: TextStyle(color: ColorManager.primary),
+      ));
 }
 
 Widget defaultButton({
@@ -48,6 +51,7 @@ Widget buildTextFormField({
   Function? onSubmit,
 }) {
   return TextFormField(
+    cursorColor: ColorManager.primary,
     controller: controller,
     obscureText: obscureText,
     keyboardType: inputType,
@@ -57,12 +61,17 @@ Widget buildTextFormField({
     },
     decoration: InputDecoration(
       labelText: label,
+      labelStyle: TextStyle(color: ColorManager.primary),
       prefixIcon: Icon(
         prefixIcon,
         color: ColorManager.primary,
       ),
       border: const OutlineInputBorder(),
       suffixIcon: suffix,
+      enabledBorder:
+          const OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+      focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: ColorManager.primary)),
     ),
   );
 }

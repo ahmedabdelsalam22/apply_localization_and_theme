@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sinric_app/notification_services/localization/applocal.dart';
+import 'package:sinric_app/shared/dark_theme_services/dark_theme_provider.dart';
 
 import '../../shared/app_router.dart';
 import '../../shared/color_manager.dart';
@@ -14,7 +16,7 @@ class MyDrawer extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             shape: BoxShape.rectangle,
-            color: Colors.blue[100],
+            color: Theme.of(context).cardColor,
           ),
           child: const Image(
             fit: BoxFit.cover,
@@ -79,6 +81,9 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeState = Provider.of<DarkThemeProvider>(context);
+    bool isDark = themeState.getDarkTheme;
+
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -86,7 +91,7 @@ class MyDrawer extends StatelessWidget {
           SizedBox(
             height: 240,
             child: DrawerHeader(
-              decoration: BoxDecoration(color: Colors.blue[100]),
+              decoration: BoxDecoration(color: Theme.of(context).cardColor),
               child: buildDrawerHeader(context),
             ),
           ),
@@ -117,7 +122,7 @@ class MyDrawer extends StatelessWidget {
           buildDrawerListItemsDivider(),
           buildDrawerListItem(
             leadingIcon: Icons.person,
-            title: getLang(context, 'drawer_account'),
+            title: getLang(context, 'account'),
             onTap: () {
               Navigator.pushNamed(context, AppRoutes.accountScreenRoute);
             },
@@ -156,6 +161,23 @@ class MyDrawer extends StatelessWidget {
             },
           ),
           buildDrawerListItemsDivider(),
+          SwitchListTile(
+            title: Text(
+              isDark
+                  ? getLang(context, "light_mode")
+                  : getLang(context, "dark_mode"),
+            ),
+            activeColor: ColorManager.primary,
+            secondary: Icon(
+              isDark ? Icons.light_mode : Icons.dark_mode,
+              color: ColorManager.primary,
+            ),
+            value: themeState.getDarkTheme,
+            onChanged: (bool value) {
+              themeState.setDarkTheme = value;
+            },
+          ),
+          buildDrawerListItemsDivider(),
           buildDrawerListItem(
             leadingIcon: Icons.logout,
             title: getLang(context, 'logOff'),
@@ -163,7 +185,6 @@ class MyDrawer extends StatelessWidget {
               //TODO with backend service
             },
           ),
-          buildDrawerListItemsDivider(),
         ],
       ),
     );

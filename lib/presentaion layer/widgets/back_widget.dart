@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:sinric_app/shared/color_manager.dart';
 
 class BackWidget extends StatelessWidget {
   const BackWidget({Key? key}) : super(key: key);
@@ -11,10 +12,7 @@ class BackWidget extends StatelessWidget {
       onTap: () {
         Navigator.pop(context);
       },
-      child: const Icon(
-        IconlyLight.arrowLeft2,
-        color: Colors.black,
-      ),
+      child: Icon(IconlyLight.arrowLeft2, color: ColorManager.primary),
     );
   }
 }

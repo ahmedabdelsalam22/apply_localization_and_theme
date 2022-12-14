@@ -2,6 +2,7 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:sinric_app/presentaion%20layer/screens/login/login_cubit/login_cubit.dart';
 import 'package:sinric_app/presentaion%20layer/screens/login/login_cubit/login_state.dart';
 
@@ -9,6 +10,7 @@ import '../../../notification_services/localization/applocal.dart';
 import '../../../shared/app_router.dart';
 import '../../../shared/color_manager.dart';
 import '../../../shared/components.dart';
+import '../../../shared/dark_theme_services/dark_theme_provider.dart';
 import '../../widgets/google_button.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -22,13 +24,18 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeState = Provider.of<DarkThemeProvider>(context);
+    bool isDark = themeState.getDarkTheme;
+
     return BlocProvider(
       create: (context) => LoginCubit()..setNotification(),
       child: BlocConsumer<LoginCubit, LoginStates>(
         listener: (context, state) {},
         builder: (context, state) {
           var cubit = LoginCubit.get(context);
+
           return Scaffold(
+            appBar: AppBar(automaticallyImplyLeading: false),
             body: Center(
               child: SingleChildScrollView(
                 child: Padding(
@@ -98,8 +105,8 @@ class LoginScreen extends StatelessWidget {
                           children: [
                             Text(
                               getLang(context, "I_forget_my_password!"),
-                              style: const TextStyle(
-                                color: Colors.black,
+                              style: TextStyle(
+                                color: isDark ? Colors.white : Colors.black,
                               ),
                             ),
                             TextButton(
@@ -122,9 +129,11 @@ class LoginScreen extends StatelessWidget {
                           builder: (context) {
                             return defaultButton(
                                 onPressed: () {
-                                  if (formKey.currentState!.validate()) {
+                                  /* if (formKey.currentState!.validate()) {
                                     /// todo: that
-                                  }
+                                  }*/
+                                  Navigator.pushReplacementNamed(
+                                      context, AppRoutes.homeScreenRoute);
                                 },
                                 text: getLang(context, "login"));
                           },
@@ -154,8 +163,9 @@ class LoginScreen extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Text(
                             getLang(context, "or"),
-                            style: const TextStyle(
-                                color: Colors.black, fontSize: 18),
+                            style: TextStyle(
+                                color: isDark ? Colors.white : Colors.black,
+                                fontSize: 18),
                           ),
                         ),
                         SizedBox(height: 5.h),

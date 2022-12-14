@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:sinric_app/presentaion%20layer/screens/splash/splash_screen.dart';
 import 'package:sinric_app/shared/app_router.dart';
-import 'package:sinric_app/shared/theme/themes.dart';
+import 'package:sinric_app/shared/dark_theme_services/dark_theme_provider.dart';
+import 'package:sinric_app/shared/theme_const/themes.dart';
 
 import 'notification_services/localization/applocal.dart';
 
@@ -21,10 +23,28 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   MyApp({super.key});
 
-  bool arabicLang = true;
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool arabicLang = false;
+
+  DarkThemeProvider themeChangeProvider = DarkThemeProvider();
+
+  void getCurrentAppTheme() async {
+    themeChangeProvider.setDarkTheme =
+        await themeChangeProvider.darkThemePrefs.getTheme();
+  }
+
+  @override
+  void initState() {
+    getCurrentAppTheme();
+    super.initState();
+  }
 
   // This widget is the root of your application.
   @override
@@ -34,33 +54,44 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: lightTheme,
-          home: const SplashScreen(),
-          onGenerateRoute: AppRouter.generateRoute,
-          initialRoute: AppRoutes.homeScreenRoute,
-          localizationsDelegates: const [
-            AppLocale.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider(create: (_) => themeChangeProvider),
           ],
-          supportedLocales: const [
-            Locale("en", ""),
-            Locale("ar", ""),
-          ],
-          locale: arabicLang ? const Locale("ar", "") : const Locale("en", ""),
-          localeResolutionCallback: (currentLang, supportLang) {
-            if (currentLang != null) {
-              for (Locale locale in supportLang) {
-                if (locale.languageCode == currentLang.languageCode) {
-                  return currentLang;
-                }
-              }
-            }
-            return supportLang.first;
-          },
+          child: Consumer<DarkThemeProvider>(
+            builder: (context, themeProvider, child) {
+              return MaterialApp(
+                debugShowCheckedModeBanner: false,
+                theme: Styles.themeData(themeProvider.getDarkTheme, context),
+                home: const SplashScreen(),
+                onGenerateRoute: AppRouter.generateRoute,
+                initialRoute: AppRoutes.splashScreenRoute,
+                localizationsDelegates: const [
+                  AppLocale.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate
+                ],
+                supportedLocales: const [
+                  Locale("en", ""),
+                  Locale("ar", ""),
+                ],
+                locale: arabicLang
+                    ? const Locale("ar", "")
+                    : const Locale("en", ""),
+                localeResolutionCallback: (currentLang, supportLang) {
+                  if (currentLang != null) {
+                    for (Locale locale in supportLang) {
+                      if (locale.languageCode == currentLang.languageCode) {
+                        return currentLang;
+                      }
+                    }
+                  }
+                  return supportLang.first;
+                },
+              );
+            },
+          ),
         );
       },
     );

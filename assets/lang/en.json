@@ -59,5 +59,7 @@
   "description": "Description",
   "save": "Save",
   "new_scene": "NEW SCENE",
-  "scene_name": "Scene Name"
+  "scene_name": "Scene Name",
+  "light_mode": "Light Mode",
+  "dark_mode": "Dark Mode"
 }

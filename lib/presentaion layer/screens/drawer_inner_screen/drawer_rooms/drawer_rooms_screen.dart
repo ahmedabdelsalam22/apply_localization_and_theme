@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sinric_app/notification_services/localization/applocal.dart';
 import 'package:sinric_app/presentaion%20layer/widgets/text_widget.dart';
 import 'package:sinric_app/shared/color_manager.dart';
+
+import '../../../../shared/dark_theme_services/dark_theme_provider.dart';
 
 class DrawerRoomsScreen extends StatelessWidget {
   const DrawerRoomsScreen({Key? key}) : super(key: key);
@@ -9,11 +12,9 @@ class DrawerRoomsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManager.backGround,
       appBar: AppBar(
         elevation: 0.0,
         centerTitle: true,
-        backgroundColor: ColorManager.backGround,
         title: TextWidget(
           text: getLang(context, 'rooms'),
           color: ColorManager.primary,
@@ -47,19 +48,24 @@ class DrawerRoomsItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeState = Provider.of<DarkThemeProvider>(context);
+    bool isDark = themeState.getDarkTheme;
+
     return InkWell(
       onTap: () {},
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
           decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(15)),
+            color: Theme.of(context).cardColor,
+            borderRadius: BorderRadius.circular(15),
+          ),
           height: 150,
           child: Center(
             child: ListTile(
               title: TextWidget(
                 text: title,
-                color: Colors.black,
+                color: isDark ? Colors.white : Colors.black,
                 textSize: 20,
               ),
               trailing: const Icon(Icons.arrow_forward_ios),
