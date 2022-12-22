@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:sinric_app/notification_services/localization/applocal.dart';
 import 'package:sinric_app/presentaion%20layer/widgets/text_widget.dart';
@@ -60,13 +61,13 @@ class DrawerScenesItemList extends StatelessWidget {
             color: Theme.of(context).cardColor,
             borderRadius: BorderRadius.circular(15),
           ),
-          height: 150,
+          height: 150.h,
           child: Center(
             child: ListTile(
               title: TextWidget(
                 text: title,
                 color: isDark ? Colors.white : Colors.black,
-                textSize: 20,
+                textSize: 20.sp,
               ),
               trailing: const Icon(Icons.arrow_forward_ios),
               leading: const Icon(Icons.perm_device_info),

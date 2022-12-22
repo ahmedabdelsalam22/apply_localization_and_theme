@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sinric_app/notification_services/localization/applocal.dart';
 import 'package:sinric_app/shared/color_manager.dart';
 
@@ -15,7 +16,7 @@ class AccountScreen extends StatelessWidget {
         title: TextWidget(
             text: getLang(context, 'account_Settings'),
             color: ColorManager.primary,
-            textSize: 22),
+            textSize: 22.sp),
         centerTitle: true,
       ),
       body: Padding(
@@ -29,12 +30,12 @@ class AccountScreen extends StatelessWidget {
               title: TextWidget(
                 text: getLang(context, 'edit_personnel_information'),
                 color: ColorManager.primary,
-                textSize: 23,
+                textSize: 23.sp,
               ),
               subtitle: TextWidget(
                 text: getLang(context, 'name_timezone'),
                 color: Colors.grey,
-                textSize: 15,
+                textSize: 15.sp,
               ),
             ),
             const Divider(),
@@ -44,12 +45,12 @@ class AccountScreen extends StatelessWidget {
               title: TextWidget(
                 text: getLang(context, 'changePassword'),
                 color: ColorManager.primary,
-                textSize: 23,
+                textSize: 23.sp,
               ),
               subtitle: TextWidget(
                 text: getLang(context, 'change_your_login_password'),
                 color: Colors.grey,
-                textSize: 15,
+                textSize: 15.sp,
               ),
             ),
             const Divider(),
@@ -59,15 +60,15 @@ class AccountScreen extends StatelessWidget {
               title: TextWidget(
                 text: getLang(context, 'close_Account'),
                 color: ColorManager.primary,
-                textSize: 23,
+                textSize: 23.sp,
               ),
               subtitle: TextWidget(
                 text: getLang(context, 'delete_your_account'),
                 color: Colors.grey,
-                textSize: 15,
+                textSize: 15.sp,
               ),
             ),
-            const SizedBox(height: 5),
+            SizedBox(height: 5.h),
           ],
         ),
       ),
