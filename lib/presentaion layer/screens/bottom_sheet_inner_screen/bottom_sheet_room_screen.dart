@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sinric_app/presentaion%20layer/widgets/text_widget.dart';
 
 import '../../../notification_services/localization/applocal.dart';
@@ -33,13 +34,13 @@ class BottomSheetAddRoomScreen extends StatelessWidget {
             key: formKey,
             child: Column(
               children: [
-                const SizedBox(height: 50),
+                SizedBox(height: 50.h),
                 Row(
                   children: [
                     TextWidget(
                       text: getLang(context, "home") + ': ',
                       color: ColorManager.primary,
-                      textSize: 20,
+                      textSize: 20.sp,
                     ),
                     Expanded(
                       child: DropDownMenuComponent(
@@ -52,7 +53,7 @@ class BottomSheetAddRoomScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 buildTextFormField(
                   controller: roomNameController,
                   inputType: TextInputType.text,
@@ -66,7 +67,7 @@ class BottomSheetAddRoomScreen extends StatelessWidget {
                   prefixIcon: Icons.drive_file_rename_outline,
                   obscureText: false,
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 buildTextFormField(
                   controller: descriptionController,
                   inputType: TextInputType.text,
@@ -80,7 +81,7 @@ class BottomSheetAddRoomScreen extends StatelessWidget {
                   prefixIcon: Icons.description,
                   obscureText: false,
                 ),
-                const SizedBox(height: 50),
+                SizedBox(height: 50.h),
                 defaultButton(
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
