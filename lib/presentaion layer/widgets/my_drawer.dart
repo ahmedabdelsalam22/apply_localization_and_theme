@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:sinric_app/notification_services/localization/applocal.dart';
 import 'package:sinric_app/shared/dark_theme_services/dark_theme_provider.dart';
@@ -19,33 +20,33 @@ class MyDrawer extends StatelessWidget {
             shape: BoxShape.rectangle,
             color: Theme.of(context).cardColor,
           ),
-          child: const Image(
+          child: Image(
             fit: BoxFit.cover,
-            height: 70,
-            width: 70,
+            height: 70.h,
+            width: 70.w,
             image: AssetImage(
               'assets/images/splash.png',
             ),
           ),
         ),
-        const SizedBox(
-          height: 15,
+        SizedBox(
+          height: 15.h,
         ),
-        const Text(
+        Text(
           'userName',
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
         ),
-        const SizedBox(
-          height: 5,
+        SizedBox(
+          height: 5.h,
         ),
-        const Text(
+        Text(
           'user email',
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
         ),
         const Spacer(),
-        const Text(
+        Text(
           'First release version',
-          style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.bold),
         ),
       ],
     );
@@ -93,7 +94,7 @@ class MyDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           SizedBox(
-            height: 240,
+            height: 240.h,
             child: DrawerHeader(
               decoration: BoxDecoration(color: Theme.of(context).cardColor),
               child: buildDrawerHeader(context),

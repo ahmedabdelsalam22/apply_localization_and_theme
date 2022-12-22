@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../notification_services/localization/applocal.dart';
 import '../../shared/color_manager.dart';
@@ -21,12 +22,12 @@ class GoogleButton extends StatelessWidget {
                 color: Colors.white,
                 child: Image.asset(
                   'assets/images/google.png',
-                  width: 40,
+                  width: 40.w,
                 )),
-            const SizedBox(width: 8),
+            SizedBox(width: 8.w),
             Text(
               getLang(context, "Sign_in_with_google"),
-              style: const TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: 18.sp),
             ),
           ],
         ),
