@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sinric_app/shared/color_manager.dart';
 
 import '../../../widgets/text_widget.dart';
@@ -14,13 +15,13 @@ class ActivityLogListItemBuilder extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
+            padding: EdgeInsets.symmetric(vertical: 8.h),
             child: Container(
               width: double.infinity,
               color: Colors.white,
               child: TextWidget(
                 text: '15/2/2022',
-                textSize: 20,
+                textSize: 20.sp,
                 color: ColorManager.primary,
               ),
             ),
@@ -33,12 +34,12 @@ class ActivityLogListItemBuilder extends StatelessWidget {
                 children: [
                   TextWidget(
                     text: 'Log in with email and password',
-                    textSize: 20,
+                    textSize: 20.sp,
                     color: ColorManager.primary,
                   ),
                   TextWidget(
                     text: '${DateTime.now()}',
-                    textSize: 20,
+                    textSize: 20.sp,
                     color: Colors.grey,
                   ),
                 ],

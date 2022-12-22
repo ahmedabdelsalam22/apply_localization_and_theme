@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sinric_app/presentaion%20layer/widgets/text_widget.dart';
 import 'package:sinric_app/shared/color_manager.dart';
 
@@ -23,7 +24,7 @@ class DrawerAddNewSchedulesScreen extends StatelessWidget {
         elevation: 0.0,
         centerTitle: true,
         title: TextWidget(
-          textSize: 20,
+          textSize: 20.sp,
           text: 'SCHEDULES',
           color: ColorManager.primary,
         ),
@@ -43,10 +44,10 @@ class DrawerAddNewSchedulesScreen extends StatelessWidget {
                 value: true,
                 onChanged: (val) {},
               ),
-              const SizedBox(width: 2),
+              SizedBox(width: 2.w),
               TextWidget(
                 text: 'Enable schedules',
-                textSize: 18,
+                textSize: 18.sp,
                 color: ColorManager.primary,
               ),
             ],
@@ -63,7 +64,7 @@ class DrawerAddNewSchedulesScreen extends StatelessWidget {
               label: 'name',
               prefixIcon: Icons.drive_file_rename_outline,
               obscureText: false),
-          const SizedBox(height: 10),
+          SizedBox(height: 10.h),
           buildTextFormField(
               controller: descriptionController,
               inputType: TextInputType.text,
@@ -76,7 +77,7 @@ class DrawerAddNewSchedulesScreen extends StatelessWidget {
               label: "description",
               prefixIcon: Icons.description,
               obscureText: false),
-          const SizedBox(height: 10),
+          SizedBox(height: 10.h),
           buildTextFormField(
               controller: deviceController,
               inputType: TextInputType.text,
@@ -89,7 +90,7 @@ class DrawerAddNewSchedulesScreen extends StatelessWidget {
               label: 'device',
               prefixIcon: Icons.device_hub,
               obscureText: false),
-          const SizedBox(height: 10),
+          SizedBox(height: 10.h),
           buildTextFormField(
               controller: actionController,
               inputType: TextInputType.text,
@@ -102,7 +103,7 @@ class DrawerAddNewSchedulesScreen extends StatelessWidget {
               label: 'action',
               prefixIcon: Icons.account_tree,
               obscureText: false),
-          const SizedBox(height: 10),
+          SizedBox(height: 10.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -118,7 +119,7 @@ class DrawerAddNewSchedulesScreen extends StatelessWidget {
                   label: 'Hours',
                   prefixIcon: Icons.hourglass_bottom,
                   obscureText: false),
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
               buildTextFormField(
                   controller: minuteController,
                   inputType: TextInputType.datetime,

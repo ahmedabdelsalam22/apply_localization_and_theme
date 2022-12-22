@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sinric_app/notification_services/localization/applocal.dart';
 import 'package:sinric_app/presentaion%20layer/widgets/text_widget.dart';
 import 'package:sinric_app/shared/color_manager.dart';
@@ -17,7 +18,7 @@ class DrawerActivityLogScreen extends StatelessWidget {
         title: TextWidget(
           isTitle: true,
           text: getLang(context, "activityLog"),
-          textSize: 20,
+          textSize: 20.sp,
           color: ColorManager.primary,
         ),
         actions: const [Icon(Icons.refresh_sharp)],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 import '../../../notification_services/localization/applocal.dart';
@@ -39,28 +40,28 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                   TextWidget(
                     text: getLang(context, "Forget_your_password"),
                     color: isDark ? Colors.white : Colors.black,
-                    textSize: 25,
+                    textSize: 25.sp,
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20.h),
 
-                  /// TODO : handel this text ..
+                  /// TODO : handle this text ..
                   TextWidget(
                     text: getLang(
                         context, "Don't_worry_enter_your_registered_email"),
                     color: isDark ? Colors.white : Colors.grey,
-                    textSize: 16,
+                    textSize: 16.sp,
                   ),
-                  const SizedBox(height: 30),
+                  SizedBox(height: 30.h),
                   Image.asset(
                     'assets/images/password.png',
-                    height: 300,
-                    width: 300,
+                    height: 300.h,
+                    width: 300.w,
                   ),
-                  const SizedBox(height: 30),
+                  SizedBox(height: 30.h),
                   TextFormField(
                     cursorColor: ColorManager.primary,
                     controller: _emailController,
@@ -118,7 +119,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                       )
                     ],
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                   defaultButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
