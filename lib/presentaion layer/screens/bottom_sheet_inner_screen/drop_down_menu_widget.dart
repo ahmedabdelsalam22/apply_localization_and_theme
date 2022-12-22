@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DropDownMenuComponent extends StatelessWidget {
   final void Function(String? value) onChanged;
@@ -15,15 +16,15 @@ class DropDownMenuComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      height: 50.h,
+      padding: EdgeInsets.symmetric(horizontal: 10.w),
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
         border: Border.all(color: Colors.grey, width: 1.0),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(top: 10),
+        padding: EdgeInsets.only(top: 10.h),
         child: DropdownButtonFormField<String>(
           decoration: const InputDecoration.collapsed(hintText: ''),
           value: null,
@@ -40,7 +41,7 @@ class DropDownMenuComponent extends StatelessWidget {
               value: value,
               child: Text(
                 value,
-                style: const TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 20.sp),
               ),
             );
           }).toList(),

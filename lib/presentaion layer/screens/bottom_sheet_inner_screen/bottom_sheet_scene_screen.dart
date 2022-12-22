@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../notification_services/localization/applocal.dart';
 import '../../../shared/color_manager.dart';
@@ -21,7 +22,7 @@ class BottomSheetAddSceneScreen extends StatelessWidget {
           isTitle: true,
           text: getLang(context, 'new_scene'),
           color: ColorManager.primary,
-          textSize: 20,
+          textSize: 20.sp,
         ),
       ),
       body: SingleChildScrollView(
@@ -31,7 +32,7 @@ class BottomSheetAddSceneScreen extends StatelessWidget {
             key: formKey,
             child: Column(
               children: [
-                const SizedBox(height: 50),
+                SizedBox(height: 50.h),
                 buildTextFormField(
                   controller: sceneNameController,
                   inputType: TextInputType.text,
@@ -45,7 +46,7 @@ class BottomSheetAddSceneScreen extends StatelessWidget {
                   prefixIcon: Icons.drive_file_rename_outline,
                   obscureText: false,
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 buildTextFormField(
                   controller: descriptionController,
                   inputType: TextInputType.text,
@@ -59,7 +60,7 @@ class BottomSheetAddSceneScreen extends StatelessWidget {
                   prefixIcon: Icons.description,
                   obscureText: false,
                 ),
-                const SizedBox(height: 50),
+                SizedBox(height: 50.h),
                 defaultButton(
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
