@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sinric_app/presentaion%20layer/screens/home/rooms/tabbar_rooms_screen.dart';
 import 'package:sinric_app/presentaion%20layer/screens/home/scenes/tabbar_scenes_screen.dart';
 import 'package:sinric_app/presentaion%20layer/widgets/text_widget.dart';
@@ -153,8 +154,9 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TextWidget(text: title, color: ColorManager.primary, textSize: 15),
-            TextWidget(text: subtitle, color: Colors.grey, textSize: 15),
+            TextWidget(
+                text: title, color: ColorManager.primary, textSize: 15.sp),
+            TextWidget(text: subtitle, color: Colors.grey, textSize: 15.sp),
           ],
         ),
       ),
